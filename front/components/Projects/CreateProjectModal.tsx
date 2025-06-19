@@ -13,6 +13,7 @@ type Props = {
 const fields: Field[] = [
   { name: 'title', label: 'Title', type: FieldType.text, required: true },
   { name: 'description', label: 'Description', type: FieldType.textarea, required: true },
+  { name: 'type', label: 'Vous êtes', type: FieldType.select, value:[{value:"master", label:"MJ"}, {value:"player", label:"Joueur"}], required: true },
   { name: 'image', label: 'Project Image', type: FieldType.image },
 ];
 
