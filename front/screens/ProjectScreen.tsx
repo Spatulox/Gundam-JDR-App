@@ -5,6 +5,7 @@ import CreateProjectModal from '../components/Projects/CreateProjectModal';
 import NoProjectsCard from '../components/Projects/NoProjectCards';
 import { globalStyles } from '../styles/globalStyle';
 import { useNavigation } from '@react-navigation/native';
+import { Navigation, ProjectDetailsNavigation, ScreenList } from './ScreenList';
 
 
 export type Project = {
@@ -54,7 +55,7 @@ export default function ProjectScreen() {
   const [projects, setProjects] = useState<Project[] | null>();
   const [modalVisible, setModalVisible] = useState(false);
   const hasProjects = projects && projects.length > 0;
-  const navigation = useNavigation();
+  const navigation = useNavigation<Navigation>();
 
   const handleCreate = (project: ProjectCreate) => {
     if(projects){
@@ -85,7 +86,7 @@ export default function ProjectScreen() {
   };
   
   const handleEdit = (project: Project) => {
-    //navigation.navigate('ProjectDetail', { id: project.id });
+    navigation.navigate(ScreenList.ProjectDetails, { id: project.id });
   };
 
   return (
