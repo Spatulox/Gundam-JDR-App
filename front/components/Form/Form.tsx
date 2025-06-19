@@ -13,7 +13,7 @@ import {
 
 import * as ImagePicker from 'expo-image-picker';
 import * as DocumentPicker from 'expo-document-picker';
-import { ImageUploadField } from './ImagUploadField';
+import { ImageUploadField } from './ImageUploadField';
 import { FileUploadField } from './FileUploadField';
 import { modalStyles } from '../../styles/modalStyles';
 import { globalStyles } from '../../styles/globalStyle';
