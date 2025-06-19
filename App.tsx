@@ -5,6 +5,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 import ProjectScreen from './front/screens/ProjectScreen';
 import Header from './front/shared/header';
 import ExampleFormScreen from './front/components/Form/ExampleForm';
+import { ScreenList } from './front/screens/ScreenList';
+import ProjectDetail from './front/screens/ProjectDetailsScreen';
 
 const Stack = createStackNavigator();
 
@@ -13,8 +15,12 @@ export default function App() {
     <View style={{ flex: 1, backgroundColor: '#f7f8fa' }}>
       <Header />
       <NavigationContainer>
-        <Stack.Navigator screenOptions={{ headerShown: false }}>
-          <Stack.Screen name="Projects" component={ProjectScreen} />
+        <Stack.Navigator
+          initialRouteName={ScreenList.Project}
+          screenOptions={{ headerShown: false }}
+        >
+          <Stack.Screen name={ScreenList.Project} component={ProjectScreen} />
+          <Stack.Screen name={ScreenList.ProjectDetails} component={ProjectDetail} />
           
           {/* <Stack.Screen name="Other" component={OtherScreen} /> */}
         </Stack.Navigator>
