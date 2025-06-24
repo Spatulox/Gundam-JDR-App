@@ -1,9 +1,13 @@
 import { StyleSheet, Dimensions } from 'react-native';
-import { globalStyles } from '../../styles/globalStyle';
+import { globalStyles } from '../../../styles/globalStyle';
 
 const screenWidth = Dimensions.get('window').width;
 
 export const projectListStyles = StyleSheet.create({
+  touchableCards : {
+    maxWidth: 600,
+    alignSelf: 'center',
+  },
   card: {
     ...globalStyles.card,
     flexDirection: 'row',
@@ -12,7 +16,6 @@ export const projectListStyles = StyleSheet.create({
     marginBottom: 18,
     alignSelf: 'center',
     width: screenWidth > 600 ? 600 : '95%',
-    maxWidth: 600,
     position: 'relative',
     gap: 16,
   },

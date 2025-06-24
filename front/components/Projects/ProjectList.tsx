@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, FlatList, Image, TouchableOpacity } from 'react-native';
-import { projectListStyles } from './ProjectListStyles';
+import { projectListStyles } from './css/ProjectListStyles';
 
 type Props = {
     projects: any,
@@ -20,7 +20,7 @@ export default function ProjectList({ projects, onEdit, onDelete }: Props) {
       keyExtractor={item => item.id}
       contentContainerStyle={{ gap: 18, paddingBottom: 30 }}
       renderItem={({ item }) => (
-        <TouchableOpacity onPress={() => onEdit(item)}>
+        <TouchableOpacity onPress={() => onEdit(item)} style={projectListStyles.touchableCards}>
           <View style={projectListStyles.card}>
             <Image source={{ uri: item.image }} style={projectListStyles.img} />
             <View style={projectListStyles.info}>
@@ -33,7 +33,7 @@ export default function ProjectList({ projects, onEdit, onDelete }: Props) {
               </View>
               <Text style={projectListStyles.desc}>{item.description}</Text>
               <View style={projectListStyles.metaRow}>
-                <Text style={projectListStyles.meta}>👥 {item.characters} characters</Text>
+                <Text style={projectListStyles.meta}>👥 {item.characters.length} characters</Text>
                 <Text style={projectListStyles.meta}>📅 {item.date}</Text>
               </View>
             </View>
