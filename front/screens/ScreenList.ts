@@ -1,4 +1,5 @@
 import type { StackNavigationProp } from '@react-navigation/stack';
+import { ProjectDetailsType } from './ProjectDetailsScreen';
 
 
 export enum ScreenList {
@@ -9,7 +10,7 @@ export enum ScreenList {
 
 export type RootStackParamList = {
   [ScreenList.Project]: undefined;
-  [ScreenList.ProjectDetails]: { id: string };
+  [ScreenList.ProjectDetails]: ProjectDetailsType;
 };
 export type Navigation = StackNavigationProp<RootStackParamList>;
 
