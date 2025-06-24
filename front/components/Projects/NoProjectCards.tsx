@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { globalStyles } from '../../styles/globalStyle';
-import { noProjectsStyles } from './noProjectStyles';
+import { noProjectsStyles } from './css/noProjectStyles';
 
 type Props = {
   onCreate: () => void;

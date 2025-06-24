@@ -1,6 +1,6 @@
 
 import { StyleSheet, Dimensions } from 'react-native';
-import { globalStyles } from '../../styles/globalStyle';
+import { globalStyles } from '../../../styles/globalStyle';
 const screenWidth = Dimensions.get('window').width;
 
 export const noProjectsStyles = StyleSheet.create({
