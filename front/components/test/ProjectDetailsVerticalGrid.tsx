@@ -1,6 +1,6 @@
 import React from 'react';
 import { FlatList, View } from 'react-native';
-import AdventureCard, { AdventureCardProps } from './ProjectDetailsVerticalCard';
+import ProjectDetailsVerticalCard, { ProjectDetailsCardProps } from './ProjectDetailsVerticalCard';
 import { Character, Shop } from '../../screens/ProjectScreen';
 
 
@@ -9,8 +9,8 @@ type Props = {
   onPressCard: (item: Shop | Character[]) => void;
 };
 
-export default function AdventureGrid({ data, onPressCard }: Props) {
-    let cards: AdventureCardProps[];
+export default function ProjectDetailsVerticalGrid({ data, onPressCard }: Props) {
+    let cards: ProjectDetailsCardProps[];
     console.log('AdventureGrid data:', data);
     if (Array.isArray(data) && 'price' in (data[0] || {})) {
         cards = [{
@@ -25,14 +25,14 @@ export default function AdventureGrid({ data, onPressCard }: Props) {
             onPress: () => onPressCard(data),
         }];
     }
-    
+
     return (
         <View>
             <FlatList
             data={cards}
             keyExtractor={(_, idx) => idx.toString()}
             numColumns={3}
-            renderItem={({ item }) => <AdventureCard {...item} />}
+            renderItem={({ item }) => <ProjectDetailsVerticalCard {...item} />}
             contentContainerStyle={{ padding: 12 }}
             />
         </View>

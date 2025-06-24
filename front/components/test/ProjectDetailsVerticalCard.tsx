@@ -8,11 +8,11 @@ const CARD_MARGIN = 12;
 const CARD_COLUMNS = 3;
 const CARD_WIDTH = (Dimensions.get('window').width - CARD_MARGIN * (CARD_COLUMNS + 1)) / CARD_COLUMNS;
 
-export type AdventureCardProps =
+export type ProjectDetailsCardProps =
   | { type: 'shop'; data: Shop; onPress: () => void }
   | { type: 'characters'; data: Character[]; onPress: () => void };
 
-export default function AdventureCard(props: AdventureCardProps) {
+export default function ProjectDetailsVerticalCard(props: ProjectDetailsCardProps) {
   let title = '';
   let count = 0;
   let label = '';

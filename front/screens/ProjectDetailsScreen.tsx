@@ -4,7 +4,7 @@ import { Project } from './ProjectScreen';
 import { RouteProp, useRoute } from '@react-navigation/native';
 import { RootStackParamList, ScreenList } from './ScreenList';
 import { globalStyles } from '../styles/globalStyle';
-import AdventureGrid from '../components/test/AdventureGrid';
+import ProjectDetailsVerticalGrid from '../components/test/ProjectDetailsVerticalGrid';
 
 
 export type ProjectDetailsType = {
@@ -32,13 +32,13 @@ export default function ProjectDetails() {
     </View>
     <View>
       {project.characters && project.characters.length > 0 && (
-        <AdventureGrid
+        <ProjectDetailsVerticalGrid
           data={project.characters}
           onPressCard={onPress}
         />
       )}
       {project.shop && project.shop.length > 0 && (
-        <AdventureGrid
+        <ProjectDetailsVerticalGrid
           data={project.shop}
           onPressCard={onPress}
         />
